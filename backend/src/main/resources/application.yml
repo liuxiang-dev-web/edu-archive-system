@@ -1,0 +1,26 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/edu_archive?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+    username: ${DB_USERNAME:root}
+    password: ${DB_PASSWORD:your_mysql_password}   # 本地运行改成你的 MySQL 密码，或用环境变量 DB_PASSWORD 覆盖
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  servlet:
+    multipart:
+      max-file-size: 50MB
+      max-request-size: 50MB
+
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
+  global-config:
+    db-config:
+      id-type: auto
+
+app:
+  jwt-secret: ${JWT_SECRET:change_this_to_a_long_random_secret_at_least_32_chars}   # 生产环境务必用环境变量 JWT_SECRET 覆盖
+  jwt-expire-hours: 12
+  # 勿用 ./uploads：Tomcat 下会落到 work 目录，易缺失或不可写。可用环境变量覆盖：APP_UPLOAD_DIR
+  upload-dir: ${APP_UPLOAD_DIR:${user.home}/edu-archive/uploads}
