@@ -1,0 +1,118 @@
+:root {
+  --edu-primary: #3f7dff;
+  --edu-primary-soft: #edf3ff;
+  --edu-bg: #f4f7fd;
+  --edu-card-shadow: 0 10px 24px rgba(42, 84, 180, 0.1);
+  --edu-text-main: #2b3242;
+  --edu-text-sub: #5f6c8f;
+  --edu-card-bg: #ffffff;
+  --edu-card-border: #e7eeff;
+  --edu-table-header-bg: #f1f6ff;
+  --edu-table-header-text: #34508a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Microsoft YaHei", "PingFang SC", "Segoe UI", sans-serif;
+  background: radial-gradient(circle at top right, #eaf1ff, #f7f9ff 40%, #f5f7fb 100%);
+  color: var(--edu-text-main);
+}
+
+body.theme-dark {
+  --edu-primary: #6ea2ff;
+  --edu-primary-soft: #1f2f52;
+  --edu-bg: #0f1728;
+  --edu-card-shadow: 0 10px 28px rgba(0, 0, 0, 0.35);
+  --edu-text-main: #e5ecff;
+  --edu-text-sub: #aebee5;
+  --edu-card-bg: #17233f;
+  --edu-card-border: #2a3a63;
+  --edu-table-header-bg: #22355f;
+  --edu-table-header-text: #d4e1ff;
+  background: radial-gradient(circle at top right, #1e2b49 0%, #111a30 45%, #0b1222 100%);
+}
+
+#app {
+  min-height: 100vh;
+}
+
+.edu-page-card {
+  border-radius: 14px;
+  box-shadow: var(--edu-card-shadow);
+  border: 1px solid var(--edu-card-border);
+  background: var(--edu-card-bg);
+}
+
+.edu-section-title {
+  margin: 0 0 12px;
+  color: var(--edu-text-main);
+  font-weight: 700;
+}
+
+.el-button--primary {
+  background: linear-gradient(135deg, #3f7dff, #5a9cff);
+  border-color: #4b87ff;
+}
+
+.el-card {
+  border-radius: 14px;
+  border: 1px solid var(--edu-card-border);
+  box-shadow: var(--edu-card-shadow);
+  background: var(--edu-card-bg);
+}
+
+.el-card__header {
+  border-bottom: 1px solid var(--edu-card-border);
+}
+
+.el-table {
+  border-radius: 10px;
+  overflow: hidden;
+  --el-table-bg-color: transparent;
+  --el-table-tr-bg-color: transparent;
+  --el-table-header-bg-color: var(--edu-table-header-bg);
+  --el-table-border-color: var(--edu-card-border);
+  --el-table-text-color: var(--edu-text-main);
+}
+
+.el-table th.el-table__cell {
+  background: var(--edu-table-header-bg);
+  color: var(--edu-table-header-text);
+}
+
+.el-form-item__label,
+.el-descriptions__label,
+.el-text,
+p {
+  color: var(--edu-text-sub);
+}
+
+.el-menu {
+  --el-menu-bg-color: transparent;
+}
+
+body.theme-dark .el-input__wrapper,
+body.theme-dark .el-select__wrapper,
+body.theme-dark .el-textarea__inner {
+  background: #111b34;
+  box-shadow: 0 0 0 1px #2c3d68 inset;
+  color: #e4ebff;
+}
+
+body.theme-dark .el-tag {
+  background: #2c3f6f;
+  border-color: #3c5186;
+}
+
+body.theme-dark .el-menu-item {
+  color: #c6d5fb;
+}
+
+body.theme-dark .el-menu-item.is-active {
+  background: #2c416f !important;
+  color: #ecf3ff !important;
+}
